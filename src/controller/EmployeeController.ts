@@ -1,10 +1,13 @@
 import { Context } from "hono";
-import { employeesModel } from "../model/models";
+import { employeesModel } from "../model/EmployeeModels";
+
+
+// ** CRUD OPERATIONS **
 
 // READ
 export const getEmployee = async (c: Context) => c.json(employeesModel);
 
-// POST
+// CREATE
 export const addEmployee = async (c: Context) => {
    const { id, fullName, department, position, email, phone, salary, isActive } = await c.req.json();
 
@@ -13,7 +16,7 @@ export const addEmployee = async (c: Context) => {
    return c.json(employeesModel);
 }
 
-// PUT
+// UPDATE
 export const updateEmployee = async (c: Context) => {
    const { id, fullName, department, position, email, phone, salary, isActive } = await c.req.json();
 
