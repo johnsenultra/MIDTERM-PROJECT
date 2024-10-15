@@ -1,17 +1,18 @@
 
 import { Hono } from "hono";
 import { addEmployee, getEmployee, updateEmployee, deleteEmployee } from "../controller/EmployeeController";
+import { middleware } from "../middleware/middleware";
 
 export const employeeRoutes = new Hono()
 
 // GET
-employeeRoutes.get("/getEmployee", getEmployee);
+employeeRoutes.get("/getEmployee", middleware, getEmployee);
 
 // POST
-employeeRoutes.post("/addEmployee", addEmployee)
+employeeRoutes.post("/addEmployee", middleware, addEmployee)
 
 // PUT
-employeeRoutes.put("/updateEmployee", updateEmployee)
+employeeRoutes.put("/updateEmployee", middleware, updateEmployee)
 
 // DELETE
-employeeRoutes.delete("/deleteEmployee", deleteEmployee)
+employeeRoutes.delete("/deleteEmployee", middleware, deleteEmployee)
