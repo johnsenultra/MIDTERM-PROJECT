@@ -1,7 +1,7 @@
 import { serve } from '@hono/node-server' // Import the serve function
 import { Hono } from 'hono' // Import the Hono class
 import { rootRoutes } from './routes/RootRoutes' // Import the rootRoutes
-import { hashPassword } from './utils/authutils' // Import the AuthUti
+import { hashPassword } from './utils/AuthUtils' // Import the AuthUti
 import { cors } from 'hono/cors' // Import the cors middleware
 
 const app = new Hono()
