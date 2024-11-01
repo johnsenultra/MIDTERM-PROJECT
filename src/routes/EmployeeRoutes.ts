@@ -5,6 +5,7 @@ import { middleware } from "../middleware/middleware";
 
 export const employeeRoutes = new Hono()
 
+// ** HTTP method **
 // GET
 employeeRoutes.get("/getEmployee", middleware, getEmployee);
 
