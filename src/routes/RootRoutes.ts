@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { employeeRoutes } from './EmployeeRoutes';
+import { productRoutes } from './ProductRoutes';
 import { cors } from 'hono/cors';
 
 
@@ -15,6 +16,8 @@ rootRoutes.use('@*', cors({
    credentials: true // This will allow the credentials **Note: This is only for the browser
 }));
 
+
+// Root Routes for employeeData
 rootRoutes.route("/viewEmployee", employeeRoutes);
 
 rootRoutes.route("/postEmployee", employeeRoutes);
@@ -22,3 +25,13 @@ rootRoutes.route("/postEmployee", employeeRoutes);
 rootRoutes.route("/putEmployee", employeeRoutes);
 
 rootRoutes.route("/deleteEmployee", employeeRoutes);
+
+
+// Root Routes for productData
+rootRoutes.route("/viewProduct", productRoutes);
+
+rootRoutes.route("/postProduct", productRoutes);
+
+rootRoutes.route("/putProduct", productRoutes);
+
+rootRoutes.route("/deleteProduct", productRoutes);
